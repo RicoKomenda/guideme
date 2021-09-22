@@ -1,0 +1,21 @@
+version: "3.9"
+
+volumes:
+  mysql_data:
+    driver: local
+
+services:
+  guideme-db:
+    container_name: guideme-db
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - "/var/lib/mysql"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: guideme-db
+      MYSQL_USER: guideme
+      MYSQL_PASSWORD: guideme
