@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - changeset:
+      comments: create database schema
+      file: db/changelog/changeset/00-23092021-schema.sql
