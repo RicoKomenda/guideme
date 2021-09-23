@@ -1,32 +1,36 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    #sidenav
+    mode="side"
+    opened
+    [position]="'start'"
+    class="style-sidenav"
   >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item [routerLink]="['home']">Home</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
+    <a mat-button [routerLink]="['home']"> <mat-icon>home</mat-icon>Home </a>
+    <a mat-button [routerLink]="['onboarding']">
+      <mat-icon>emoji_people</mat-icon>Onboarding
+    </a>
+    <a mat-button [routerLink]="['mentoring']">
+      <mat-icon>escalator_warning</mat-icon>Mentoring</a
+    >
+    <a mat-button [routerLink]="['settings']">
+      <mat-icon>settings</mat-icon>Settings
+    </a>
+    <mat-icon
+      *ngIf="sidenav.opened"
+      class="collapse-sidenav"
+      (click)="animateSidenav()"
+      >keyboard_backspace</mat-icon
+    >
+    <mat-icon
+      *ngIf="!sidenav.opened"
+      class="expand-sidenav"
+      (click)="animateSidenav()"
+      >east</mat-icon
+    >
   </mat-sidenav>
+
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>guideme-fe</span>
-    </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

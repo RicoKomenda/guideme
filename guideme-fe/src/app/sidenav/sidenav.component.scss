@@ -1,17 +1,52 @@
 .sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 200px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.style-sidenav {
+  width: 150px;
+  padding: 70px 0 20px 0;
+}
+
+a {
+  margin: 5px 0;
+
+  mat-icon {
+    margin-right: 15px;
+  }
+}
+
+.collapse-sidenav {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.expand-sidenav {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  cursor: pointer;
+}
+
+h1 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  overflow: hidden !important;
 }

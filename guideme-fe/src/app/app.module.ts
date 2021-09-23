@@ -15,9 +15,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
+import { SplitterModule } from 'primeng/splitter';
+import { OnboardingComponent } from './onboarding/onboarding.component';
+import { MentoringComponent } from './mentoring/mentoring.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
-  declarations: [AppComponent, SidenavComponent, HomeComponent],
+  declarations: [AppComponent, SidenavComponent, HomeComponent, OnboardingComponent, MentoringComponent, SettingsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +33,7 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    SplitterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
