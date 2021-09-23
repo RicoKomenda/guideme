@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    opened
+    [position]="'start'"
+    class="style-sidenav"
+  >
+    <a mat-button [routerLink]="['home']"> <mat-icon>home</mat-icon>Home </a>
+    <a mat-button [routerLink]="['onboarding']">
+      <mat-icon>emoji_people</mat-icon>Onboarding
+    </a>
+    <a mat-button [routerLink]="['mentoring']">
+      <mat-icon>escalator_warning</mat-icon>Mentoring</a
+    >
+    <a mat-button [routerLink]="['settings']">
+      <mat-icon>settings</mat-icon>Settings
+    </a>
+    <mat-icon
+      *ngIf="sidenav.opened"
+      class="collapse-sidenav"
+      (click)="animateSidenav()"
+      >keyboard_backspace</mat-icon
+    >
+    <mat-icon
+      *ngIf="!sidenav.opened"
+      class="expand-sidenav"
+      (click)="animateSidenav()"
+      >east</mat-icon
+    >
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
