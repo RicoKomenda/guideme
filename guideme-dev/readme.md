@@ -11,6 +11,6 @@ This will add all privileges for the database itself to the user 'guideme'
 
 ---
 
-After running keycloak, visit localhost:8080 to access the administration panel of keycloak. Login using the credentials "admin" with the password "pa55w0rd".
+After running keycloak, visit localhost:8080 to access the administration panel of keycloak. Login using the credentials "admin" with the password "Pa55w0rd".
 
 Add a new realm and import the keycloak-export file from keycloak-settings folder.
